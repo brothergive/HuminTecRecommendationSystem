@@ -1,6 +1,8 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
+import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
 from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import QCoreApplication
 # 필요한 모듈들을 불러옵니다. 기본적인 UI 구성요소를 제공하는 위젯 (클래스)들은 PyQt5.QtWidgets 모듈에 포함되어 있습니다.
 # QtWidgets 모듈에 포함된 모든 클래스들과 이에 대한 자세한 설명은 QtWidgets 공식 문서에서 확인할 수 있습니다.
 
@@ -13,10 +15,17 @@ class MyApp(QWidget):
 
 
     def initUI(self):
+        width = 1300
+        hight = 800
+        btn = QPushButton('Quit', self)
+        btn.move(width-150, 800-50)
+        btn.resize(btn.sizeHint())
+        btn.clicked.connect(QCoreApplication.instance().quit)
+
 
         self.setWindowTitle('HuminTec')
         self.setWindowIcon(QIcon('H_icon.png'))
-        self.setGeometry(300, 300, 300, 200)
+        self.setGeometry(200, 200, width, hight)
         self.show()
         # 여기서 self는 MyApp 객체를 말합니다.
         # setWindowTitle() 메서드는 타이틀바에 나타나는 창의 제목을 설정합니다.
