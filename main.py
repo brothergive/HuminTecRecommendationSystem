@@ -70,3 +70,7 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     w = Form()
     sys.exit(app.exec())
+
+
+# https://github.com/metalnom/Python_NLPProject
+# https://m.blog.naver.com/PostView.nhn?blogId=metalnonn&logNo=221917005927&targetKeyword=&targetRecommendationCode=1
